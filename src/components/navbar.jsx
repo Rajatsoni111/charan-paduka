@@ -3,6 +3,7 @@ import { CiSearch } from "react-icons/ci";
 import "./stylesheet/navbar.css"
 import { CiMenuFries } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
+import { IoCartOutline,IoCartSharp   } from "react-icons/io5";
 
 
 const Navbar = () => {
@@ -34,6 +35,7 @@ const Navbar = () => {
           <li>About us</li>
           <li>Pricing</li>
           <li>Contact us</li>
+          <li><div className='desktop-cart'><IoCartOutline/></div></li>
           <div className='search'>
             <input type="text" placeholder='search' />
             <div className="icon"> <CiSearch /></div>

@@ -5,6 +5,7 @@ import LandingPage from './components/landingPage';
 import FirstPage from './components/firstpage';
 import Brands from './components/brands';
 import Footer from './components/footer';
+import GenderSoes from './components/genderSoes';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
     <Navbar/>
     <FirstPage/>
     <Brands/>
+    <GenderSoes/>
     </>
   );
 }
