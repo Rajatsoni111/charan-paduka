@@ -19,7 +19,7 @@ function App() {
     <Cart/>
     {/* <Login/> */}
     {/* <Brands/> */}
-    {/* <GenderSoes/> */}
+    <GenderSoes/>
     </>
   );
 }

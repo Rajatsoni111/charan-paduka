@@ -1,43 +1,102 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./stylesheet/firstpage.css"
 
 const FirstPage = () => {
-  let arr = [
-  {
-      shoename: 'adidas',
-      Image: '../adidas.png',
-  },
-    {
-      shoename: 'REBOOK',
-      Image: '../adidshoes.png'
-    },
-    {
-      shoename: 'NEWBALANCE',
-      Image: '../newbalance.png',
-    },
-  ]
+
+  let [background, setBackground] = useState('#4d50ab')
+  let [background2, setBackground2] = useState('#8f9196')
+
+  let [adidas, setAdidas] = useState('0')
+  let [nb, setNb] = useState('-100%')
+  let [nike, setNike] = useState('-100%')
+
+  let [disadidas, setDisAdidas] = useState('flex')
+  let [disnb, setDisNb] = useState('none')
+  let [dissnike, setDisNike] = useState('none')
+
+  const setBG = (arg) => {
+
+    if (arg === 1) {
+      setBackground('#4d50ab')
+      setBackground2('#8f9196')
+      setAdidas('0%')
+      setNb('-100%')
+      setNike('-100%')
+      setDisAdidas('flex')
+      setDisNb('none')
+      setDisNike('none')
+    }
+    if (arg === 2) {
+      setBackground('#800000')
+      setBackground2('#DAD4B5')
+      setAdidas('-100%')
+      setNb('0%')
+      setNike('-100%')
+      setDisAdidas('none')
+      setDisNb('flex')
+      setDisNike('none')
+    }
+    if (arg === 3) {
+      setBackground('#874CCC')
+      setBackground2('#EFB6C8')
+      setAdidas('-100%')
+      setNb('-100%')
+      setNike('0%')
+      setDisAdidas('none')
+      setDisNb('none')
+      setDisNike('flex')
+    }
+  }
   return (
     <>
-      <div className="firstpage">
+      <div className="firstpage" style={{ background: background2 }}>
         <div className='content-text'>
           <h2>The Future is here</h2>
         </div>
-        {arr.map((item,index)=>{
-          return   <div className='firstpage-div'>
-          <div className='adidas'>
-            <h2>{item.shoename}</h2>
-            <h3>Fearlessly Independent Since 1906</h3>
-            <p>this is the show you eant to buy so buy it foot comgkvi a jdgi ajjfoa djfa dfiae fjafa</p>
-            <button>Show more</button>
+        <div className='firstpage-div' style={{ background: background }}>
+          <div className='shoes-dis'>
+            <div className="for-adidas " style={{display:disadidas, color: '#DAD4B5' }}>
+                <h1>ADIDAS</h1>
+              <h3>Impossible is nothing</h3>
+              <p>Adidas shoes offer comfort, style, and performance, featuring Boost cushioning for energy return, Primeknit uppers for a snug fit, and durable Continental outsoles.</p>
+              <button>Show more</button>
+            </div>
+            <div className="for-nb " style={{display:disnb, color: '#DAD4B5' }}>
+              <h1 style={{ bottom: '-100%' }}>NEW BALANCE</h1>
+              <h3>Fearlessly Independent Since 1906</h3>
+              <p>New Balance shoes are known for their comfort, support, and durability. Featuring cushioned midsoles, breathable uppers, and a variety of sizes and widths, they offer a perfect fit for all</p>
+              <button>Show more</button>
+            </div>
+            <div className="for-nb " style={{display:dissnike, color: '#DAD4B5' }}>
+              <h1 style={{ bottom: '-100%' }}>NIKE</h1>
+              <h3>Just Do It</h3>
+              <p>Energetic cushioning from two Air Zoom units plus a flexible tailgate for an easy step-in and step-out motion means you can own a run, without the hassle.</p>
+              <button>Show more</button>
+            </div>
           </div>
           <div className="content-img">
-            {/* <img src="../adidas.png" alt="" /> */}
-            {/* <img src="../newbalance.png"/> */}
-            <img src={item.Image}/>
-            <div className='shoe-circle'></div>
+            <div className='adidas' style={{ right: adidas }}>
+              <img src="../adidas.png" alt="" />
+            </div>
+            <div className='nb' style={{ right: nb }}>
+              <img src="../newbalance.png" />
+            </div>
+            <div className='nike' style={{ right: nike }}>
+              <img src='../nike.png' />
+            </div>
+            {/* <div className='shoe-circle'></div> */}
           </div>
         </div>
-        })}
+        <div className='change-button'>
+          <div className='shoe-button' style={{ background: '#4d50ab' }} onClick={() => setBG(1)}>
+            <img src="../adidas.png" alt="" />
+          </div>
+          <div className='shoe-button' style={{ background: "#c11c1c" }} onClick={() => setBG(2)}>
+            <img src="../newbalance.png" alt="" />
+          </div><div className='shoe-button' style={{ background: "#874CCC" }} onClick={() => setBG(3)}>
+            <img src="../nike.png" alt="" />
+          </div>
+        </div>
       </div>
 
       <div className='tagline'>

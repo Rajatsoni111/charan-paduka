@@ -1,6 +1,11 @@
 .genderShoes{
     width: 100%;
     height: 100dvh;
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .genderShoes h3{
     text-align: center;
@@ -12,60 +17,57 @@
   font-style: normal;
 }
 .genders{
-    width: 100%;
-    height: 20dvh;
+    width: 90%;
+    height: 80dvh;
 /* border: black solid; */
 display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
 
 }
-.genders-div{
-    width: 25%;
-    height: 100%;
-    display: flex;
+.gender-div{
+    width: 19%;
+    height:60%;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-.genders-div img{
+    justify-content: center; */
+    border: 1px solid black;
+    padding: 10px;
+    position: relative;
+    margin-top: 10px;
+
+ img{
     width: 100%;
-    height: 80%;
+    height: 50%;
     aspect-ratio: 3/2;
     object-fit: contain;
 }
-.genders-div h1{
+ h1{
     margin: 0;
     font-size: 3vh;
 }
-.shoe-category{
-    width: 100%;
-    height: 40dvh;
-    border: black solid;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: scroll;
+h2 , p{
+    margin: 5px 2px;
+    font-size: 2vh;
 }
-.category{
-    width: 80%;
-    height: 35dvh;
-    /* border: black solid; */
-    border-radius: 2rem;
-    position: relative;
-}
-.category h2{
-    margin: 0;
-    font-size: 6vh;
-    z-index: 2;
+button{
+   padding: 10px;
+    border: none;
+    border-radius: 10px;
     color: white;
-text-align: center;
-    bottom: 30px;
+    background-color: rgb(50, 50, 50);
     position: absolute;
-
+    bottom: 10px;
 }
-.category img{
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 3/2;
-    object-fit: contain;
+button:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid;
+    transition: 0.5s;
+}
+}
+.gender-div:hover{
+    transform: scale(1.01);
+    transition: 0.5s;
 }
