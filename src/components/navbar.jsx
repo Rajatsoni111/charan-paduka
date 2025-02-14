@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import { CiSearch } from "react-icons/ci";
 import "./stylesheet/navbar.css"
 import { CiMenuFries } from "react-icons/ci";
@@ -36,14 +36,33 @@ const Navbar = () => {
     else  setTop('-100%')  
     console.log(top)
   }
+
+  const [prevScrollY, setPrevScrollY] = useState(0);
+  const [hideNavbar, setHideNavbar] = useState('0%');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > prevScrollY) {
+        setHideNavbar('-100%');
+      } else {
+        setHideNavbar('0%');
+      }
+      setPrevScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollY]);
   
 
   return (
-    <div >
+    <div onS>
       <ThisContext.Provider value={top}>
         <Cart/>
       </ThisContext.Provider>
-      <div className='navbar'>
+      <div className='navbar'style={{top:hideNavbar}} >
         <h1>Charan paduka</h1>
 
         <div className='search'>

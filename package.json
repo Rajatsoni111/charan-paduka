@@ -10,7 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/three": "^0.168.0",
     "framer-motion": "^12.0.0-alpha.0",
-    "gsap": "^3.12.5",
+    "gsap": "^3.12.7",
     "locomotive-scroll": "^5.0.0-beta.21",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -43,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-router-dom": "^7.1.5"
   }
 }

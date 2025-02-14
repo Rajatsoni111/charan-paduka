@@ -2,17 +2,15 @@
     width: 100%;
     height: 10%;
     margin: 0;
-    top: 0;
+    /* top: 0; */
     left: 0;
-    /* background: #fffbfb7d; */
     backdrop-filter: blur(20px);
     position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* overflow: hidden; */
-    z-index: 3;
-    /* border: 1px solid; */
+    z-index: 999;
+    transition: 0.5s;
 }
 .navbar h1{
     font-family: "Abril Fatface", serif;
@@ -93,14 +91,15 @@ display: none;
         flex-direction: column;
         right: -100%;
         top: 7dvh;
-        width: 30%;
+        width: 40%;
         height: 95dvh;
         font-size: 3vh;
         /* border: black solid; */
         align-items: start;
-        background: #fffbfbdf;
-        backdrop-filter: blur(20px);
+        background: #ffffff;
+        /* backdrop-filter: blur(40px); */
         transition:0.5s;
+        padding: 10px;
     }
 
     .search{

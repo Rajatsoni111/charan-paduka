@@ -11,24 +11,28 @@ align-items: center;
 display: flex;
 }
 .form-div{
-    width: 30%;
-    height: 30%;
+    width: 40%;
+    height: 40%;
     /* border: 1px black solid; */
     background-color: white;
     border-radius: 10px;
     padding: 10px;
-
+    display: flex;
 }
 .form{
     width: 50%;
     height: 100%;
-    border: 1px black solid;
+    /* border: 1px black solid; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     /* text-align: start; */
     gap: 10px;
+
+    label{
+        font-size: 2vw;
+    }
 }
 .form-button{
     width: 100%;
@@ -36,20 +40,43 @@ display: flex;
     display: flex;
     justify-content: center;
     gap: 5%;
+    margin-top: 10%;
 }
 .form button{
+    font-size: 1vw;
     width: 30%;
     background-color: black;
     color: white;
     border: none;
     border-radius: 10px ;
+    padding: 5px;
+}
+.form button:hover{
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+    border: 1px black solid;
 }
 .form input{
     background-color: none;
     all: none;
     width: 95%;
+    height: 40%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 3px;
+    margin-top: 2%;
 }
 .form .user-label, .pass-label{
     /* border: 1px black solid; */
     width: 80%;
+}
+.form-side-box{
+    width: 50%;
+    height: 100%;
+    background: rgb(56, 56, 56);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
