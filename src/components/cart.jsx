@@ -7,7 +7,7 @@ const Cart = () => {
   
   return (
     <div className='cart' style={{ top: useTop }}>
-      <div>use = {useTop}</div>
+      {/* // <div>use = {useTop}</div> */}
     </div>
   );
 }

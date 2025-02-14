@@ -1,6 +1,7 @@
 import React from 'react'
 import item from './item.json'
 import "./stylesheet/genderShoes.css"
+import { Link } from 'react-router-dom'
 
 const GenderSoes = () => {
    
@@ -14,7 +15,7 @@ const GenderSoes = () => {
                     <h1>{item.name}</h1>
                     <p>{item.description}</p>
                     <h2>price : {item.price} $</h2>
-                    <button>show more</button>
+                   <Link to='/product'> <button>show more</button></Link>
                 </div>
                 })}
             </div>

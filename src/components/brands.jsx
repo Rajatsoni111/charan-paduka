@@ -1,38 +1,46 @@
-import React from 'react'
-import "./stylesheet/brands.css"
-import Slider from "react-slick";
-
+import React, { useEffect, useState } from 'react'
+import './stylesheet/brands.css'
+import item from './item.json'
 
 const Brands = () => {
-    let data = [{
-        name: "Nike",
-        image: "../shoes.png"
-    },
-    {name: "New Balance",
-        image: "../newbalance.png"
-    },
-    {
-        name: "Adidas",
-        image: "../adidas.png"
-    },{
-        name: "Reebok",
-        image: "../rebook.png"
-    }]
+
+    const [crousel, setCrousel] = useState(0)
+    const [ifPause, setIfPause] = useState(false)
+
+
+    useEffect(() => {
+        if (!ifPause) {  
+            const interval = setInterval(() => {
+                setCrousel((previewind) => (previewind + 1) % item.length)
+            }, 3000);
+            return () => clearInterval(interval)
+        }
+    })
+
 
     return (
-        <div className='brands'>
-            <div className='brands-showcase'>
-            {data.map((item ,index)=>{
-                return <div key={index} className="nike">
-                <h1>{item.name}</h1>
-                <img src={item.image} alt="" />
+        <div className='Brands'>
+            <h1>Our New Launches</h1>
+            <div className='crausel-container'>
+                {item.map((item, index) => {
+                    return <div className='crausel' key={index} style={{
+                        display: crousel === index ? "flex" : "none",
+                        transition: 0.5,}}
+                        onMouseEnter={() => setIfPause(true)}
+                        onMouseLeave={() => setIfPause(false)}>
+                        <div className='crausel-shoe-detail'>
+                            <h1>{item.name}</h1>
+                            <p>{item.description}</p>
+                            <span>40% OFF</span>
+                        </div>
+                        <div className='crousel-shoe-img'>
+                            <div className='crousel-cir'></div>
+                            <img src={item.image} alt="" />
+                        </div>
+                    </div>
+                })}
+
             </div>
-            })}
-                </div>
-                {/* <div className="nike">
-                    <h1>Nike</h1>
-                    <img src="../shoes.png" alt="" />
-                </div> */}
         </div>
     )
 }

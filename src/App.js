@@ -8,18 +8,25 @@ import Footer from './components/footer';
 import GenderSoes from './components/genderSoes';
 import Cart from './components/cart';
 import Login from './components/login';
+import { BrowserRouter, Router, Route, Switch, Routes } from 'react-router-dom';
+import Product from './components/product';
 
 function App() {
   return (
     <>
-    <Footer/>
-    <LandingPage/>
-    <Navbar/>
-    <FirstPage/>
-    <Cart/>
-    {/* <Login/> */}
-    {/* <Brands/> */}
-    <GenderSoes/>
+      <BrowserRouter>
+        {/* <LandingPage /> */}
+        <Navbar />
+        <FirstPage />
+        <Cart />
+        <Login/>
+        <GenderSoes />
+        <Brands/>
+        <Footer />
+        <Routes>
+          <Route path="/product" component={Product} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

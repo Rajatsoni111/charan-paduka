@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./stylesheet/firstpage.css"
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+// import { use } from 'react'
 
 const FirstPage = () => {
+  gsap.registerPlugin(ScrollTrigger)
 
   let [background, setBackground] = useState('#4d50ab')
   let [background2, setBackground2] = useState('#8f9196')
@@ -47,6 +51,17 @@ const FirstPage = () => {
       setDisNike('flex')
     }
   }
+
+//   useEffect(() => {
+//     gsap.to(".tagline-h1", {
+//         y: 0,
+//         duration: 1,
+//         //    transition:1,
+//         stagger: 0.2,
+//         ease: 'power4.inOut'
+
+//     })
+// })
   return (
     <>
       <div className="firstpage" style={{ background: background2 }}>
@@ -100,7 +115,14 @@ const FirstPage = () => {
       </div>
 
       <div className='tagline'>
-        <h1>BE STYLISH</h1>
+        <div className='tagline-div'>
+        {/* {'Be stylish'.split('').map((letter, index) => {
+          return <h1 className='tagline-h1' key={index} >{letter}</h1>
+        })} */}
+        {"RAJAT SONI".split("").map((item, index) => {
+                            return <div className='tagline-h1'><h1 className='name-1-p'>{item}</h1></div>
+                        })}
+        </div>
         <h2>Give your feet the comfert they deserve</h2>
       </div>
     </>

@@ -91,14 +91,15 @@ display: none;
         flex-direction: column;
         right: -100%;
         top: 7dvh;
-        width: 30%;
+        width: 40%;
         height: 95dvh;
         font-size: 3vh;
         /* border: black solid; */
         align-items: start;
-        background: #fffbfbdf;
-        backdrop-filter: blur(20px);
+        background: #ffffff;
+        /* backdrop-filter: blur(40px); */
         transition:0.5s;
+        padding: 10px;
     }
 
     .search{

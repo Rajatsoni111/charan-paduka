@@ -1,13 +1,12 @@
 .genderShoes{
     width: 100%;
     height: 100dvh;
-    /* overflow: hidden; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
-.genderShoes h3{
+/* .genderShoes h3{
     text-align: center;
     margin: 0;
     padding: 10px;
@@ -15,11 +14,11 @@
     font-family: "Bonheur Royale", cursive;
   font-weight: 100;
   font-style: normal;
-}
+
+} */
 .genders{
     width: 90%;
-    height: 80dvh;
-/* border: black solid; */
+    height: 100dvh;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
@@ -27,11 +26,7 @@ justify-content: space-around;
 }
 .gender-div{
     width: 19%;
-    height:60%;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
+    height:45dvh;
     border: 1px solid black;
     padding: 10px;
     position: relative;
@@ -70,4 +65,47 @@ button:hover{
 .gender-div:hover{
     transform: scale(1.01);
     transition: 0.5s;
+}
+@media  screen and (max-width: 768px){
+    .genders{
+        height: fit-content;
+    }
+    .gender-div{
+        width: 40%;
+        height:40%;
+        border: 1px solid black;
+        padding: 10px;
+        position: relative;
+        margin-top: 10px;
+    
+     img{
+        width: 100%;
+        height: 50%;
+        aspect-ratio: 3/2;
+        object-fit: contain;
+    }
+     h1{
+        margin: 0;
+        font-size: 4vw;
+    }
+    h2 , p{
+        margin: 5px 2px;
+        font-size: 3vw;
+    }
+    button{
+       padding: 10px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        background-color: rgb(50, 50, 50);
+        position: absolute;
+        bottom: 10px;
+    }
+    button:hover{
+        background-color: white;
+        color: black;
+        border: 1px solid;
+        transition: 0.5s;
+    }
+    }    
 }
