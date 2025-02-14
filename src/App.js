@@ -8,23 +8,24 @@ import Footer from './components/footer';
 import GenderSoes from './components/genderSoes';
 import Cart from './components/cart';
 import Login from './components/login';
-import { BrowserRouter, Router, Route, Switch, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Product from './components/product';
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        {/* <LandingPage /> */}
+        {/* <LandingPage />
         <Navbar />
         <FirstPage />
         <Cart />
         <Login/>
         <GenderSoes />
         <Brands/>
-        <Footer />
+        <Footer /> */}
         <Routes>
-          <Route path="/product" component={Product} />
+          <Route path="/" element={<FirstPage/>} />
+          <Route path="/products" element={<Product/>} />
         </Routes>
       </BrowserRouter>
     </>

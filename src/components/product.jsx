@@ -8,7 +8,7 @@ const Product = () => {
     <div className='product-div'>
     <div className='genders'>
     {item.map((item, index) => {
-        return <div className='gender-div'>
+        return <div className='gender-div' key={index}>
         <img src={item.image} alt="" />
         <h1>{item.name}</h1>
         <p>{item.description}</p>
