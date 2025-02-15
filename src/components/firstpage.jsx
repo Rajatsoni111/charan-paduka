@@ -128,7 +128,7 @@ const FirstPage = () => {
           {/* {'Be stylish'.split('').map((letter, index) => {
           return <h1 className='tagline-h1' key={index} >{letter}</h1>
         })} */}
-          {"RAJAT SONI".split("").map((item, index) => {
+          {["Be Stylish"].slice("").map((item, index) => {
             return <div className='tagline-h1'><h1 className='name-1-p'>{item}</h1></div>
           })}
         </div>

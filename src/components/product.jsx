@@ -1,11 +1,17 @@
 import React from 'react'
 import item from './item.json'
-import "./stylesheet/genderShoes.css"
+import "./stylesheet/product.css"
+import Navbar from './navbar'
+
 
 const Product = () => {
   return (
     <>
     <div className='product-div'>
+      <Navbar/>
+      <div className='fliter'>
+        susraaaaaaaaaaaaaa
+      </div>
     <div className='genders'>
     {item.map((item, index) => {
         return <div className='gender-div' key={index}>
