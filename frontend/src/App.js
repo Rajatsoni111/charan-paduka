@@ -25,7 +25,7 @@ function App() {
         <Footer /> */}
         <Routes>
           <Route path="/" element={<FirstPage/>} />
-          <Route path="/products" element={<Product/>} />
+          {/* <Route path="/products" element={<Product/>} /> */}
         </Routes>
       </BrowserRouter>
     </>

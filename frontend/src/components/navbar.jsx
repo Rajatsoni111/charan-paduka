@@ -8,15 +8,19 @@ import { GrCart } from "react-icons/gr";
 import { FaUserCircle } from "react-icons/fa";
 import Context from './context';
 import Cart from './cart';
+import Product from './product';
 
 const ThisContext = createContext()
+const ThisSearch = createContext()
+
 
 const Navbar = () => {
+  const [search , setSearch] = useState('')
   const [open , setOpen] = useState("flex")
   const [close , setClose] = useState("none")
   const [right , setRight] = useState("-100%")
   const [top , setTop] = useState("-100%")
-
+console.log(search)
   const handleOpen = () =>{
     setOpen("none")
     setClose("flex")
@@ -30,7 +34,7 @@ const Navbar = () => {
     console.log("this is close")
   }
   const handleTop = () =>{
-    if (top == '-100%') { setTop('0%')
+    if (top === '-100%') { setTop('0%')
     console.log("this is close with 0")
     }
     else  setTop('-100%')  
@@ -58,15 +62,16 @@ const Navbar = () => {
   
 
   return (
-    <div onS>
+    // <div>
       <ThisContext.Provider value={top}>
+      <ThisSearch.Provider value={search}>
         <Cart/>
-      </ThisContext.Provider>
+        <Product/>
       <div className='navbar'style={{top:hideNavbar}} >
         <h1>Charan paduka</h1>
 
         <div className='search'>
-            <input type="text" placeholder='search' />
+            <input type="text" placeholder='search' onChange={(e)=>setSearch(e.target.value)} />
             <div className="icon"> <CiSearch /></div>
           </div>
         <ul style={{right:right}}>
@@ -89,9 +94,10 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+      </ThisSearch.Provider>
+      </ThisContext.Provider>
   )
 }
 
 export default Navbar
-export {ThisContext}
+export {ThisContext,ThisSearch}
