@@ -1,43 +1,39 @@
-import React, { createContext, useEffect, useState, useRef} from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { CiSearch } from "react-icons/ci";
 import "./stylesheet/navbar.css"
 import { CiMenuFries } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
-import { IoCartOutline,IoCartSharp   } from "react-icons/io5";
 import { GrCart } from "react-icons/gr";
 import { FaUserCircle } from "react-icons/fa";
-import Context from './context';
-import Cart from './cart';
-import Product from './product';
 
-const ThisContext = createContext()
-const ThisSearch = createContext()
-
+import {ContextProvide} from '../thisContext';
 
 const Navbar = () => {
-  const [search , setSearch] = useState('')
-  const [open , setOpen] = useState("flex")
-  const [close , setClose] = useState("none")
-  const [right , setRight] = useState("-100%")
-  const [top , setTop] = useState("-100%")
-// console.log(search)
-  const handleOpen = () =>{
+  const {setSearch, search} = useContext(ContextProvide);
+
+  const [open, setOpen] = useState("flex")
+  const [close, setClose] = useState("none")
+  const [right, setRight] = useState("-100%")
+  const [top, setTop] = useState("-100%")
+  // console.log(search)
+  const handleOpen = () => {
     setOpen("none")
     setClose("flex")
     setRight("0")
     console.log("this is open")
   }
-  const handleclose = () =>{
+  const handleclose = () => {
     setOpen("flex")
     setClose("none")
     setRight("-100%")
     console.log("this is close")
   }
-  const handleTop = () =>{
-    if (top === '-100%') { setTop('0%')
-    console.log("this is close with 0")
+  const handleTop = () => {
+    if (top === '-100%') {
+      setTop('0%')
+      console.log("this is close with 0")
     }
-    else  setTop('-100%')  
+    else setTop('-100%')
     console.log(top)
   }
 
@@ -60,46 +56,39 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [prevScrollY]);
-  
+
 
   return (
-    // <div>
-    <ThisContext.Provider value={top}>
-      <ThisSearch.Provider value={search}>
-        <Cart/>
-        <Product/>
-      <div className='navbar'style={{top:hideNavbar}} >
-        <h1>Charan paduka</h1>
+    <div className='navbar' style={{ top: hideNavbar }} >
+      <h1>Charan paduka</h1>
 
-        <div className='search'>
-            <input type="text" placeholder='search' onChange={(e)=>setSearch(e.target.value)} />
-            <div className="icon"> <CiSearch /></div>
-          </div>
-        <ul style={{right:right}}>
-       
-          <li>Home</li>
-          <li>About us</li>
-          <li>Items</li>
-          <li>Contact us</li>
-          <li><div className='desktop-cart' onClick={handleTop}><GrCart/></div></li>
-          <li><div className='desktop-person'><FaUserCircle/></div></li>
+      <div className='search'>
+        {/* <input type="text" placeholder='search' onChange={(e) => setSearch(e.target.value)} /> */}
+        <input type="text" placeholder='search' onChange={(e)=>{setSearch(e.target.value);console.log(search)}}/>
+        <div className="icon"> <CiSearch /></div>
+      </div>
+      <ul style={{ right: right }}>
 
-          
-        </ul>
-        <div className='menu'>
-          <div className="open" onClick={handleOpen} style={{display:open}}>
-            <CiMenuFries  />
-          </div>
-          <div className="close" onClick={handleclose} style={{display:close}}>
-            <IoMdClose />
-          </div>
+        <li>Home</li>
+        <li>About us</li>
+        <li>Items</li>
+        <li>Contact us</li>
+        <li><div className='desktop-cart' onClick={handleTop}><GrCart /></div></li>
+        <li><div className='desktop-person'><FaUserCircle /></div></li>
+
+
+      </ul>
+      <div className='menu'>
+        <div className="open" onClick={handleOpen} style={{ display: open }}>
+          <CiMenuFries />
+        </div>
+        <div className="close" onClick={handleclose} style={{ display: close }}>
+          <IoMdClose />
         </div>
       </div>
-      </ThisSearch.Provider>
-      </ThisContext.Provider>
+    </div>
   )
-  
+
 }
 
 export default Navbar
-export {ThisContext,ThisSearch}

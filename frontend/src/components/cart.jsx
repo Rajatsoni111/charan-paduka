@@ -1,13 +1,14 @@
 import React, { useContext } from 'react'
 import "./stylesheet/cart.css"
-import { ThisContext } from './navbar'
+import {ContextProvide} from '../thisContext';
 
 const Cart = () => {
-  const useTop = useContext(ThisContext);
+
+const {cart} = useContext(ContextProvide)
   
   return (
-    <div className='cart' style={{ top: useTop }}>
-      {/* // <div>use = {useTop}</div> */}
+    <div className='cart'>
+      {console.log(cart)}
     </div>
   );
 }

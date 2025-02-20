@@ -2,11 +2,11 @@ import React, { useContext } from 'react'
 import { ITEMS } from './item'
 import "./stylesheet/product.css"
 // import Navbar from './navbar'
-import { ThisSearch } from './navbar'
+import { ContextProvide } from '../thisContext'
 
 
 const Product = () => {
-  let search = useContext(ThisSearch)
+  const context = useContext(ContextProvide)
   return (
     <>
       <div className='product-div'>
@@ -17,8 +17,8 @@ const Product = () => {
         <div className='product'>
           {
             ITEMS.length > 0 && ITEMS.filter((product) => {
-              return search === '' ? product : product.name.toLowerCase()
-                .includes(String(search).toLowerCase());
+              return context.search === '' ? product : product.name.toLowerCase()
+                .includes(String(context.search).toLowerCase());
               // return console.log(product.name.toLowerCase());
             })
               .map((product, index) => {
