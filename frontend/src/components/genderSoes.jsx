@@ -5,7 +5,7 @@ import "./stylesheet/genderShoes.css"
 
 const GenderSoes = () => {
     const followLink = () => {
-        window.open("/products", "_blank");
+        window.open("/Detailproducts", "_blank");
       };
 
     return (
