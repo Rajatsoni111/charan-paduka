@@ -1,5 +1,5 @@
 import React from 'react'
-import item from './item.json'
+import {ITEMS} from './item'
 import "./stylesheet/genderShoes.css"
 // import { NavLink } from 'react-router-dom'
 
@@ -12,7 +12,7 @@ const GenderSoes = () => {
         <div className='genderShoes'>
             {/* <h3>All category</h3> */}
             <div className='genders'>
-                {item.map((item, index) => {
+                {ITEMS.map((item, index) => {
                     return <div className='gender-div' key={index}>
                     <img src={item.image} alt="" />
                     <h1>{item.name}</h1>

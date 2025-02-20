@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './stylesheet/brands.css'
-import item from './item.json'
+import {ITEMS} from './item'
 
 const Brands = () => {
 
@@ -11,7 +11,7 @@ const Brands = () => {
     useEffect(() => {
         if (!ifPause) {  
             const interval = setInterval(() => {
-                setCrousel((previewind) => (previewind + 1) % item.length)
+                setCrousel((previewind) => (previewind + 1) % ITEMS.length)
             }, 3000);
             return () => clearInterval(interval)
         }
@@ -22,7 +22,7 @@ const Brands = () => {
         <div className='Brands'>
             <h1>Our New Launches</h1>
             <div className='crausel-container'>
-                {item.map((item, index) => {
+                {ITEMS.map((item, index) => {
                     return <div className='crausel' key={index} style={{
                         display: crousel === index ? "flex" : "none",
                         transition: 0.5,}}

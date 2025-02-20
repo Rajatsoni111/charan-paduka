@@ -1,4 +1,4 @@
-[
+export const ITEMS = [
     {
       "name": "Nike Air Max 270",
       "brand": "Nike",

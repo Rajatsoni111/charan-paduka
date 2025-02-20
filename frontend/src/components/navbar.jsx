@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState, useRef} from 'react'
 import { CiSearch } from "react-icons/ci";
 import "./stylesheet/navbar.css"
 import { CiMenuFries } from "react-icons/ci";
@@ -20,7 +20,7 @@ const Navbar = () => {
   const [close , setClose] = useState("none")
   const [right , setRight] = useState("-100%")
   const [top , setTop] = useState("-100%")
-console.log(search)
+// console.log(search)
   const handleOpen = () =>{
     setOpen("none")
     setClose("flex")
@@ -42,6 +42,7 @@ console.log(search)
   }
 
   const [prevScrollY, setPrevScrollY] = useState(0);
+  // const prevScrollY = useRef(0);
   const [hideNavbar, setHideNavbar] = useState('0%');
 
   useEffect(() => {
@@ -63,7 +64,7 @@ console.log(search)
 
   return (
     // <div>
-      <ThisContext.Provider value={top}>
+    <ThisContext.Provider value={top}>
       <ThisSearch.Provider value={search}>
         <Cart/>
         <Product/>
@@ -97,6 +98,7 @@ console.log(search)
       </ThisSearch.Provider>
       </ThisContext.Provider>
   )
+  
 }
 
 export default Navbar

@@ -129,7 +129,7 @@ const FirstPage = () => {
           return <h1 className='tagline-h1' key={index} >{letter}</h1>
         })} */}
           {["Be Stylish"].slice("").map((item, index) => {
-            return <div className='tagline-h1'><h1 className='name-1-p'>{item}</h1></div>
+            return <div className='tagline-h1' key={index}><h1 className='name-1-p'>{item}</h1></div>
           })}
         </div>
         <h2>Give your feet the comfert they deserve</h2>
