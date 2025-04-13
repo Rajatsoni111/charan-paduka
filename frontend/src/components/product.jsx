@@ -11,9 +11,45 @@ const Product = () => {
     <>
       <div className='product-div'>
         {/* <Navbar /> */}
-        {/* <div className='fliter'>
-          susraaaaaaaaaaaaaa
-        </div> */}
+        <div className='fliter'>
+          <h1>Filter</h1>
+          <div className="Brands-filter">
+            <div className="brands-filter-brands">
+              <h1>Brands</h1>
+              <hr />
+              <ul className='brands-ul'>
+                <input type="checkbox" /><label>Pama</label><br />
+                <input type="checkbox" /><label>Nike</label><br />
+                <input type="checkbox" /><label>Adidas</label><br />
+                <input type="checkbox" /><label>New Balance</label><br />
+                <input type="checkbox" /><label>Levis</label><br />
+                <input type="checkbox" /><label>Wrangler</label><br />
+                <input type="checkbox" /><label>Lee</label><br />
+              </ul>
+            </div>
+            <div className='brands-filter-colors'>
+              <h1>colors</h1>
+              <hr />
+              <ul className='brands-ul'>
+                <input type="checkbox" /><label>Red</label><br />
+                <input type="checkbox" /><label>Blue</label><br />
+                <input type="checkbox" /><label>Green</label><br />
+                <input type="checkbox" /><label>Yellow</label><br />
+                <input type="checkbox" /><label>Black</label><br />
+                <input type="checkbox" /><label>White</label><br />
+              </ul>
+            </div>
+            <div className="brand-fiter-price">
+              <h1>Price</h1>
+              <hr />
+              <ul className='brands-ul'>
+                <input type="checkbox" /><label>Low to High</label><br />
+                <input type="checkbox" /><label>High to Low</label><br />
+                </ul>
+            </div>
+            
+          </div>
+        </div>
         <div className='product'>
           {
             ITEMS.length > 0 && ITEMS.filter((product) => {

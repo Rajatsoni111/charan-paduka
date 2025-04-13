@@ -3,7 +3,7 @@ import "./stylesheet/landingpage.css"
 import {gsap} from "gsap"
 
 const LandingPage = () => {
-
+  
   useEffect(()=>{
     gsap.to('.name',{
       y:0,
@@ -20,10 +20,9 @@ const LandingPage = () => {
       delay:3,
       duration:1,
       stagger:0.1,
-      // repeat:Infinity,
       ease:'power4.inOut'
     })
-  
+  // document.body.style.overflow = 'hidden'
   })
   return (
     <div className='LandingPage'>

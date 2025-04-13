@@ -2,6 +2,7 @@ export const ITEMS = [
     {
       "name": "Nike Air Max 270",
       "brand": "Nike",
+      "id": 1,
       "price": 149.99,
       "description": "A stylish and comfortable running shoe with a large Air unit for cushioning.",
       "category": "Running Shoes",
@@ -10,6 +11,7 @@ export const ITEMS = [
     {
       "name": "Adidas Ultraboost 22",
       "brand": "Adidas",
+      "id": 2,
       "price": 180.00,
       "description": "Premium running shoes with responsive Boost cushioning and Primeknit upper.",
       "category": "Running Shoes",
@@ -18,6 +20,7 @@ export const ITEMS = [
     {
       "name": "Puma RS-X",
       "brand": "Puma",
+      "id": 3,
       "price": 110.00,
       "description": "Retro-inspired sneakers with modern technology and bold colorways.",
       "category": "Casual Sneakers",
@@ -26,6 +29,7 @@ export const ITEMS = [
     {
       "name": "New Balance 574",
       "brand": "New Balance",
+      "id": 4,
       "price": 89.99,
       "description": "Classic sneakers with suede and mesh upper for everyday comfort.",
       "category": "Casual Sneakers",
@@ -34,6 +38,7 @@ export const ITEMS = [
     {
       "name": "Reebok Nano X3",
       "brand": "Reebok",
+      "id": 5,
       "price": 130.00,
       "description": "Versatile training shoes designed for CrossFit and high-intensity workouts.",
       "category": "Training Shoes",
@@ -42,6 +47,7 @@ export const ITEMS = [
     {
       "name": "Under Armour HOVR Phantom 2",
       "brand": "Under Armour",
+      "id": 6,
       "price": 140.00,
       "description": "High-performance running shoes with HOVR cushioning and knit upper.",
       "category": "Running Shoes",
@@ -50,6 +56,7 @@ export const ITEMS = [
     {
       "name": "Converse Chuck Taylor All Star",
       "brand": "Converse",
+      "id": 7,
       "price": 60.00,
       "description": "Iconic high-top sneakers with canvas upper and rubber sole.",
       "category": "Casual Sneakers",
@@ -58,6 +65,7 @@ export const ITEMS = [
     {
       "name": "Vans Old Skool",
       "brand": "Vans",
+      "id": 8,
       "price": 75.00,
       "description": "Classic skate shoes with suede and canvas upper and signature waffle outsole.",
       "category": "Skateboarding Shoes",

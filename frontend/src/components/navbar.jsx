@@ -5,8 +5,8 @@ import { CiMenuFries } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import { GrCart } from "react-icons/gr";
 import { FaUserCircle } from "react-icons/fa";
-
 import {ContextProvide} from '../thisContext';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const {setSearch, search} = useContext(ContextProvide);
@@ -69,7 +69,7 @@ const Navbar = () => {
       </div>
       <ul style={{ right: right }}>
 
-        <li>Home</li>
+       <Link to={"/"}><li>Home</li></Link> 
         <li>About us</li>
         <li>Items</li>
         <li>Contact us</li>
