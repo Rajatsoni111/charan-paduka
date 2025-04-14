@@ -9,6 +9,7 @@ import GenderSoes from './genderSoes';
 import Cart from './cart';
 import Login from './login';
 import Navbar from './navbar';
+import AnimatedCard from './animated-card';
 
 const FirstPage = () => {
   gsap.registerPlugin(ScrollTrigger)
@@ -153,9 +154,10 @@ const FirstPage = () => {
 
 
 
-      <Cart />
-      <Login />
+      {/* <Cart /> */}
+      {/* <Login /> */}
       <GenderSoes />
+      <AnimatedCard/>
       <Brands />
       <Footer />
     </>

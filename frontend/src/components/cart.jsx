@@ -4,11 +4,11 @@ import {ContextProvide} from '../thisContext';
 
 const Cart = () => {
 
-const {cart} = useContext(ContextProvide)
+const {top} = useContext(ContextProvide)
   
   return (
-    <div className='cart'>
-      {console.log(cart)}
+    <div className='cart' style={{top:{top}}}>
+      {console.log(top)}
     </div>
   );
 }

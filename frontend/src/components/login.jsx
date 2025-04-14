@@ -4,23 +4,18 @@ import { RxCross2 } from "react-icons/rx";
 
 
 const Login = () => {
-    document.body.style.overflow = 'visible'
+    // document.body.style.overflow = 'visible'
 
     // const [display, setDisplay] = useState('none')
     const [ifdisplay, setIfDispay] = useState(false)
 
     useEffect(() => {
-        if (!ifdisplay) {
             let displayout = setTimeout(() => {
                 setIfDispay(true)
                 document.body.style.overflow = 'hidden'
             }, 10000);
 
-            return () => clearTimeout(displayout)
-        }
-        else {
-            document.body.style.overflow = 'auto'
-        }
+            return () => clearTimeout(displayout )
     }, [])
     return (
         <div className='login' style={{ display: ifdisplay ? 'flex' : 'none' }}>
@@ -40,7 +35,7 @@ const Login = () => {
                     </div>
                 </form>
                 <div className='form-side-box'>
-                    <div onClick={() => setIfDispay(false)}>
+                    <div onClick={() => setIfDispay(false, document.body.style.overflow = 'visible')}>
                         <RxCross2 style={{ color: 'white' }} />
                     </div>
                 </div>

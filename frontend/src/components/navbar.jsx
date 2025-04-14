@@ -10,11 +10,11 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const {setSearch, search} = useContext(ContextProvide);
+  const [top, setTop] = useState(ContextProvide)
 
   const [open, setOpen] = useState("flex")
   const [close, setClose] = useState("none")
   const [right, setRight] = useState("-100%")
-  const [top, setTop] = useState("-100%")
   // console.log(search)
   const handleOpen = () => {
     setOpen("none")
@@ -31,7 +31,7 @@ const Navbar = () => {
   const handleTop = () => {
     if (top === '-100%') {
       setTop('0%')
-      console.log("this is close with 0")
+      console.log(top)
     }
     else setTop('-100%')
     console.log(top)
